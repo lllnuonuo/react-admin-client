@@ -1,7 +1,18 @@
 import React from 'react';
-import ReactDom from 'react-dom';
-import 'antd/dist/antd.css'
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import memoryUtils from './utils/memoryUtils'
+import storageUtils from './utils/storageUtils'
 
-import App from './App'
+// 读取local中存取的user，保存到内存中
+const user = storageUtils.getUser();
+memoryUtils.user = user;
 
-ReactDom.render(<App />, document.getElementById('root'))
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+
