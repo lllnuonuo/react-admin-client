@@ -29,5 +29,4 @@ export default function ajax(url, data={}, type='GET'){
             message.error('请求失败')
         })
     })
-
 }
